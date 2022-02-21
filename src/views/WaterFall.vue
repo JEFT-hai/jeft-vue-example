@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2022-02-20 17:28:05
- * @LastEditTime: 2022-02-20 20:39:31
+ * @LastEditTime: 2022-02-21 14:18:55
  * @LastEditors: Please set LastEditors
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: \jeft-vue-demo\src\views\Notice.vue
@@ -37,7 +37,7 @@ export default {
       addItems: [
         {
           cover:
-            "https://wanwanyoucai.oss-cn-shenzhen.aliyuncs.com/d48acef1-70e9-4fb6-ab34-a3ad09ea7af3.jpg",
+            "https://jeft-media.oss-cn-shenzhen.aliyuncs.com/jeft-vue-example/d48acef1-70e9-4fb6-ab34-a3ad09ea7af3%20%281%29.jpg",
           title: "赣州阳光城·翡丽湾样板间",
           width: 511,
           height: 682,
@@ -45,7 +45,7 @@ export default {
         },
         {
           cover:
-            "https://wanwanyoucai.oss-cn-shenzhen.aliyuncs.com/d48acef1-70e9-4fb6-ab34-a3ad09ea7af3.jpg",
+            "https://jeft-media.oss-cn-shenzhen.aliyuncs.com/jeft-vue-example/d48acef1-70e9-4fb6-ab34-a3ad09ea7af3%20%281%29.jpg",
           title: "赣州阳光城·翡丽湾样板间",
           width: 511,
           height: 782,
@@ -55,7 +55,7 @@ export default {
       addTItems: [
         {
           cover:
-            "https://wanwanyoucai.oss-cn-shenzhen.aliyuncs.com/d48acef1-70e9-4fb6-ab34-a3ad09ea7af3.jpg",
+            "https://jeft-media.oss-cn-shenzhen.aliyuncs.com/jeft-vue-example/d48acef1-70e9-4fb6-ab34-a3ad09ea7af3%20%281%29.jpg",
           title: "赣州阳光城·翡丽湾样板间",
           width: 511,
           height: 682,
@@ -63,7 +63,7 @@ export default {
         },
         {
           cover:
-            "https://wanwanyoucai.oss-cn-shenzhen.aliyuncs.com/d48acef1-70e9-4fb6-ab34-a3ad09ea7af3.jpg",
+            "https://jeft-media.oss-cn-shenzhen.aliyuncs.com/jeft-vue-example/d48acef1-70e9-4fb6-ab34-a3ad09ea7af3%20%281%29.jpg",
           title: "赣州阳光城·翡丽湾样板间",
           width: 511,
           height: 782,
@@ -83,7 +83,11 @@ export default {
   },
   methods: {
     goBack() {
-      history.back();
+      if (window != top) {
+        top.history.back();
+      } else {
+        history.back();
+      }
     },
     onJWLoad() {
       // 异步更新数据

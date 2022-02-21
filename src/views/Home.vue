@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2022-02-18 19:52:32
- * @LastEditTime: 2022-02-20 23:02:38
+ * @LastEditTime: 2022-02-21 11:39:33
  * @LastEditors: Please set LastEditors
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: \jeft-vue-demo\src\views\Home.vue
@@ -15,7 +15,7 @@
       <a
         v-for="item in list"
         :key="item.link"
-        :href="'#/' + item.link"
+        @click="goLink(item.link)"
         class="demo-home-nav__block"
         >{{ item.text }}</a
       >
@@ -79,12 +79,21 @@ export default {
   },
   methods: {
     goLink(link) {
-      window.location.href = `#${link}`;
+      if (window != top) {
+        console.log("iiii", top.location);
+        console.log("ppp", parent.location, document.referrer);
+        top.location.href = `${document.referrer}guide/${link}.html`;
+      } else {
+        this.$router.push({ path: link });
+      }
     },
   },
 };
 </script>
 <style scoped>
+  .main {
+    padding: 20px;
+  }
   .demo-home-nav__block {
     position: relative;
     display: flex;
