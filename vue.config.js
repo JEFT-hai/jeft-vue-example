@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2022-02-21 09:19:50
- * @LastEditTime: 2022-02-21 09:27:14
+ * @LastEditTime: 2022-02-21 18:28:28
  * @LastEditors: Please set LastEditors
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: \jeft-vue-demo\vue.config.js
@@ -15,8 +15,8 @@
  * @FilePath: \youcai\vue.config.js
  */
 // const path = require('path')
-const Oss = require('./oss') // 引入刚刚创建的oss.js文件
-const WebpackAliyunOss = require('webpack-aliyun-oss')
+// const Oss = require('./oss') // 引入刚刚创建的oss.js文件
+// const WebpackAliyunOss = require('webpack-aliyun-oss')
 
 // const CompressionPlugin = require('compression-webpack-plugin') // gzip
 // const UglifyPlugin = require('uglifyjs-webpack-plugin')
@@ -46,33 +46,33 @@ module.exports = {
               })
             ]
           },
-        plugins: [
-          new WebpackAliyunOss({
-            from: './dist/**', // 上传那个文件或文件夹  可以是字符串或数组
-            // dist: '',  // 需要上传到oss上的给定文件目录
-            region: Oss.region,
-            accessKeyId: Oss.accessKeyId,
-            accessKeySecret: Oss.accessKeySecret,
-            bucket: Oss.bucket,
-            deletOrigin: false,
-            deleteEmptyDir: false,
-            // test: true,
-            setOssPath: filePath => {
-              // some operations to filePath
-              let index = filePath.lastIndexOf('dist')
-              let Path = filePath.substring(index + 4, filePath.length)
-              console.log('Path', Path, Path.replace(/\\/g, '/'))
-              return Path.replace(/\\/g, '/')
-            },
-            setHeaders: () => { // filePath
-              // some operations to filePath
-              // return false to use default header
-              return {
-                'Cache-Control': 'max-age=31536000'
-              }
-            }
-          })
-        ],
+        // plugins: [
+        //   new WebpackAliyunOss({
+        //     from: './dist/**', // 上传那个文件或文件夹  可以是字符串或数组
+        //     // dist: '',  // 需要上传到oss上的给定文件目录
+        //     region: Oss.region,
+        //     accessKeyId: Oss.accessKeyId,
+        //     accessKeySecret: Oss.accessKeySecret,
+        //     bucket: Oss.bucket,
+        //     deletOrigin: false,
+        //     deleteEmptyDir: false,
+        //     // test: true,
+        //     setOssPath: filePath => {
+        //       // some operations to filePath
+        //       let index = filePath.lastIndexOf('dist')
+        //       let Path = filePath.substring(index + 4, filePath.length)
+        //       console.log('Path', Path, Path.replace(/\\/g, '/'))
+        //       return Path.replace(/\\/g, '/')
+        //     },
+        //     setHeaders: () => { // filePath
+        //       // some operations to filePath
+        //       // return false to use default header
+        //       return {
+        //         'Cache-Control': 'max-age=31536000'
+        //       }
+        //     }
+        //   })
+        // ],
       }
     }
   },
