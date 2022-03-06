@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2022-02-20 17:28:05
- * @LastEditTime: 2022-02-21 14:18:55
+ * @LastEditTime: 2022-03-06 23:57:12
  * @LastEditors: Please set LastEditors
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: \jeft-vue-demo\src\views\Notice.vue
@@ -73,14 +73,6 @@ export default {
     };
   },
   components: {},
-  mounted() {
-    this.$noticeToast({
-      show: true,
-      items: this.items,
-      basePosition: "right",
-      top: 60,
-    });
-  },
   methods: {
     goBack() {
       if (window != top) {

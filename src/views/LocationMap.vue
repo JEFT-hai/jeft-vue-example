@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2022-02-19 21:10:49
- * @LastEditTime: 2022-02-20 14:51:41
+ * @LastEditTime: 2022-03-06 23:47:44
  * @LastEditors: Please set LastEditors
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: \jeft-vue-demo\src\views\LocationMap.vue
@@ -36,7 +36,7 @@
     ></j-location-map>
     <j-location-map
       v-model="show2"
-      addressType="point"
+      addressType="only"
       mapKey="Gq7gTjpOaZIhkGs0l4MEOA1BkFsoATaP"
       mapId="listMap"
       @address="address2 = $event"
